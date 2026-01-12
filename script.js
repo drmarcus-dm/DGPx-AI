@@ -1,4 +1,3 @@
-```javascript
 async function generateLogo() {
     const promptInput = document.getElementById('prompt').value;
     const status = document.getElementById('status');
@@ -44,4 +43,3 @@ async function generateLogo() {
         status.textContent = 'Error: ' + error.message;
     }
 }
-```
