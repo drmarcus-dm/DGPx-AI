@@ -16,7 +16,7 @@ async function generateLogo() {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': 'Bearer YOUR_OPENAI_API_KEY_HERE' // Replace with your actual API key
+                'Authorization': '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' // Replace with your actual API key
             },
             body: JSON.stringify({
                 model: 'dall-e-3', // Or 'dall-e-2' for cheaper/faster
