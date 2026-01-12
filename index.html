@@ -11,11 +11,10 @@
         <h1>AI-Powered Logo Generator</h1>
         <p>Describe your logo (e.g., "blue eagle logo for a sports team") and click Generate!</p>
         
-        <input type="text" id="prompt" placeholder="Enter logo description...">
-        <button onclick="generateLogo()">Generate Logo</button>
-        
-        <div id="result">
-            <img id="logo" alt="Generated Logo">
+        <input id="prompt" type="text" placeholder="Enter logo description">
+<button onclick="generateLogo()">Generate</button>
+<div id="status"></div>
+<img id="logo" alt="Generated Logo">
             <p id="status"></p>
         </div>
     </div>
