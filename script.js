@@ -1,3 +1,4 @@
+```javascript
 async function generateLogo() {
     const promptInput = document.getElementById('prompt').value;
     const status = document.getElementById('status');
@@ -26,12 +27,21 @@ async function generateLogo() {
             })
         });
         
-        const response = await fetch(...);
-if (!response.ok) {
-    const errorData = await response.json().catch(() => ({ error: { message: 'Unknown error' } }));
-    throw new Error(errorData.error?.message || `HTTP error! Status: ${response.status}`);
-}
-const data = await response.json();
-// Rest of the code...
+        if (!response.ok) {
+            const errorData = await response.json().catch(() => ({ error: { message: 'Unknown error' } }));
+            throw new Error(errorData.error?.message || `HTTP error! Status: ${response.status}`);
+        }
+        
+        const data = await response.json();
+        
+        if (data.data && data.data[0].url) {
+            logoImg.src = data.data[0].url;
+            status.textContent = 'Logo generated!';
+        } else {
+            status.textContent = 'Error: ' + (data.error?.message || 'Unknown error');
+        }
+    } catch (error) {
+        status.textContent = 'Error: ' + error.message;
     }
 }
+```
